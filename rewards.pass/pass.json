@@ -1,0 +1,50 @@
+{
+    "organizationName": "Martin Espresso Bar",
+    "description": "Martin Espresso Bar",
+    "formatVersion": 1,
+    "logoText": "Martin Espresso Bar Rewards Card",
+    "passTypeIdentifier" : "pass.com.martinespressobar.rewards",
+    "serialNumber" : "123456",
+    "teamIdentifier": "8HCVC4VFUN",
+    "foregroundColor": "rgb(0, 0, 0)",
+    "labelColor": "rgb(60, 60, 60)",
+    "backgroundColor": "rgb(255, 198, 0)",
+    "storeCard": {
+        "primaryFields": [
+            {
+                "key": "Bal",
+                "label": "Balance",
+                "value": 1
+            }
+        ],
+        "secondaryFields": [
+            {
+                "key": "name",
+                "label": "Member",
+                "value": "Kevin"
+            }
+        ],
+        "auxiliaryFields": [
+            {
+                "key": "time",
+                "label": "Member Since",
+                "value": "Member since Nov 2026"
+            }
+        ]
+    },
+    "locations": [
+      {
+        "latitude": 0,
+        "longitude": 0,
+        "relevantText": "Welcome to Martin Espresso Bar! Tap to collect your stamp."
+      }
+    ],
+    "barcodes" : [
+        {
+            "message" : "https://google.ca",
+            "format" : "PKBarcodeFormatQR",
+            "messageEncoding" : "iso-8859-1"
+        }
+    ]
+
+}

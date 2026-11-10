@@ -1,0 +1,6 @@
+certs/
+rewards.xcodeproj/
+rewards.pkpass
+rewards.pass/signature
+rewards.pass/manifest.json
+.DS_Store
