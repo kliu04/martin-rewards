@@ -1,8 +1,9 @@
+#!/usr/bin/python3
 import hashlib
 import json
 import os
 
-files_dict = dict()
+files_dict = {}
 
 PASS_DIR = "rewards.pass"
 SKIP = {"manifest.json", "signature"}
