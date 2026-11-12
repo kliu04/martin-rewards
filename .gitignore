@@ -1,6 +1,11 @@
+*.pkpass
+
+.DS_Store
+.env
+.pkpass
+.zed
+
 certs/
 rewards.xcodeproj/
-rewards.pkpass
-rewards.pass/signature
 rewards.pass/manifest.json
-.DS_Store
+rewards.pass/signature
