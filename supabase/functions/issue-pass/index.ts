@@ -97,11 +97,12 @@ function buildPassJSON(customer: Customer): PassJSON {
 }
 
 export default {
-  fetch: withSupabase<Database>({ auth: ["publishable"] }, async (req, ctx) => {
-    const { name, rawEmail } = await req.json();
-    const email = String(rawEmail).trim().toLowerCase();
+  fetch: withSupabase<Database>({ auth: "none" }, async (req, ctx) => {
+    const form = await req.formData();
+    const name = String(form.get("name") ?? "").trim();
+    const email = String(form.get("email") ?? "").trim().toLowerCase();
 
-    if (name === undefined || email === undefined) {
+    if (name === "" || email === "") {
       throw new Error("Invalid input: name and email are required");
     }
 
@@ -121,7 +122,10 @@ export default {
     );
 
     return new Response(new Uint8Array(pass.getAsBuffer()), {
-      headers: { "Content-Type": "application/vnd.apple.pkpass" },
+      headers: {
+        "Content-Type": "application/vnd.apple.pkpass",
+        "Content-Disposition": 'attachment; filename="martin-rewards.pkpass"',
+      },
     });
   }),
 };
