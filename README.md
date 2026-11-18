@@ -165,13 +165,13 @@ The functions import TypeScript types for the database schema from
 `supabase/functions/_shared/database.types.ts`. Generate that file with:
 
 ```bash
-supabase gen types typescript --local > supabase/functions/_shared/database.types.ts
+supabase gen types typescript > supabase/functions/_shared/database.types.ts
 ```
 
 ### Remote (Prod)
 
 ```sh
-supabase db push
+supabase db push --remote
 supabase secrets set --env-file supabase/functions/.env
 supabase functions deploy
 ```
