@@ -98,6 +98,10 @@ function buildPassJSON(customer: Customer): PassJSON {
 
 export default {
   fetch: withSupabase<Database>({ auth: "none" }, async (req, ctx) => {
+    if (req.method !== "POST") {
+      return Response.json({ error: "Method Not Allowed" }, { status: 405 });
+    }
+
     const form = await req.formData();
     const name = String(form.get("name") ?? "").trim();
     const email = String(form.get("email") ?? "").trim().toLowerCase();
