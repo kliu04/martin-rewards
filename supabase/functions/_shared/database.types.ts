@@ -37,6 +37,40 @@ export type Database = {
                   Relationships: [
                     
                   ]
+                },"devices": {
+                  Row: {
+                    "active": boolean,"created_at": string,"id": string,"key_hash": string,"name": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "active"?: boolean,"created_at"?: string,"id"?: string,"key_hash": string,"name": string
+                  }
+                  Update: {
+                    "active"?: boolean,"created_at"?: string,"id"?: string,"key_hash"?: string,"name"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"scans": {
+                  Row: {
+                    "created_at": string,"customer_id": string,"id": number,"kind": string,"stamps_after": number
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "created_at"?: string,"customer_id": string,"id"?: never,"kind": string,"stamps_after": number
+                  }
+                  Update: {
+                    "created_at"?: string,"customer_id"?: string,"id"?: never,"kind"?: string,"stamps_after"?: number
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "scans_customer_id_fkey"
+      columns: ["customer_id"]
+isOneToOne: false
+      referencedRelation: "customers"
+      referencedColumns: ["id"]
+    }
+                  ]
                 }
           }
           Views: {
