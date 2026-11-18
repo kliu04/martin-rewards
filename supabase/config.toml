@@ -425,6 +425,12 @@ enabled = true
 # and column/key alignment. Set to "null" to emit raw, unformatted SQL.
 # format_options = "{\"keywordCase\":\"upper\",\"indent\":2,\"maxWidth\":180,\"commaStyle\":\"trailing\"}"
 
+[functions.signup]
+enabled = true
+verify_jwt = false
+import_map = "./functions/signup/deno.json"
+entrypoint = "./functions/signup/index.ts"
+static_files = ["./functions/signup/assets/*.png"]
 [functions.issue-pass]
 verify_jwt = false
 static_files = ["./functions/issue-pass/assets/*.png"]
