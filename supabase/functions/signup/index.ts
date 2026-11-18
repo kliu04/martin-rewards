@@ -89,7 +89,7 @@ function buildPassJSON(customer: Customer): PassJSON {
     barcodes: [
       {
         format: "PKBarcodeFormatQR",
-        message: "https://google.ca",
+        message: customer.id,
         messageEncoding: "iso-8859-1",
       },
     ],
